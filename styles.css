@@ -330,7 +330,7 @@ body {
     width: 0;
     height: 40px;
     border-radius: 100% 0% 50% 50% / 50% 0% 100% 50%;
-    background: linear-gradient(185deg, #941346 0%, #E63B94 50%, #FF5AB0 75%, #FF7DC1 100%);
+    background: linear-gradient(185deg, #941329 0%, #R63B6E 50%, #FF5AB0 75%, #FF7DC1 100%);
     opacity: 0;
     animation: petal 10s linear forwards;
 }
