@@ -1,15 +1,3 @@
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #95d0ff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-}
-
-
 .message {
     position: absolute;
     bottom: 20px; /* Adjust this value to position the message */
@@ -24,6 +12,16 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #95d0ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
 
 .container {
     position: relative;
@@ -342,7 +340,6 @@ body {
     100% { opacity: 1; width: 40px; }
 }
 
-/* Rose Petal Arrangement */
 .petal-1 { top: 155px; left: -9px; }
 .petal-2 { top: 125px; left: -18px; transform: rotate(60deg); }
 .petal-3 { top: 105px; left: 5px; transform: rotate(120deg); }
