@@ -1,54 +1,100 @@
+/* General Styles */
 body {
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     height: 100vh;
-    background-color: #f0f8ff;
+    background-color: #87CEEB; /* Sky blue */
+    overflow: hidden;
 }
 
-.flower {
+/* Ground */
+.ground {
     position: relative;
+    width: 100%;
+    height: 20vh;
+    background-color: #5C4033; /* Brown */
+}
+
+/* Stem */
+.stem {
+    position: absolute;
+    width: 10px;
+    height: 0; /* Starts with no height */
+    background-color: #228B22; /* Green */
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: growStem 2s ease-out forwards;
+}
+
+@keyframes growStem {
+    to {
+        height: 40vh; /* Grows to 40% of viewport height */
+    }
+}
+
+/* Rose */
+.rose {
+    position: absolute;
     width: 100px;
     height: 100px;
+    bottom: 40vh; /* Positioned at the top of the stem */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.petals {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    animation: rotate 10s linear infinite;
-}
-
+/* Petals */
 .petal {
     position: absolute;
     width: 50px;
-    height: 100px;
-    background-color: #ff69b4;
-    border-radius: 50px 50px 0 0;
-    transform-origin: bottom center;
-}
-
-.petal:nth-child(1) { transform: rotate(0deg) translateY(-20px); }
-.petal:nth-child(2) { transform: rotate(60deg) translateY(-20px); }
-.petal:nth-child(3) { transform: rotate(120deg) translateY(-20px); }
-.petal:nth-child(4) { transform: rotate(180deg) translateY(-20px); }
-.petal:nth-child(5) { transform: rotate(240deg) translateY(-20px); }
-.petal:nth-child(6) { transform: rotate(300deg) translateY(-20px); }
-
-.center {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background-color: #ffd700;
+    height: 50px;
+    background-color: #FF007F; /* Rose pink */
     border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    opacity: 0; /* Starts invisible */
+    animation: bloom 1s ease-out 2s forwards; /* Delayed to start after stem grows */
 }
 
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+.petal-1 { top: 0; left: 25px; transform: rotate(45deg); }
+.petal-2 { top: 25px; left: 0; transform: rotate(-45deg); }
+.petal-3 { top: 25px; left: 50px; transform: rotate(135deg); }
+.petal-4 { top: 50px; left: 25px; transform: rotate(-135deg); }
+
+@keyframes bloom {
+    to {
+        opacity: 1;
+        transform: rotate(0deg) scale(1.2);
+    }
+}
+
+/* Leaves */
+.leaf {
+    position: absolute;
+    width: 20px;
+    height: 40px;
+    background-color: #228B22; /* Green */
+    border-radius: 50%;
+    opacity: 0; /* Starts invisible */
+    animation: growLeaves 1s ease-out 2.5s forwards; /* Delayed to start after petals bloom */
+}
+
+.leaf-1 {
+    top: 60px;
+    left: -10px;
+    transform: rotate(-45deg);
+}
+
+.leaf-2 {
+    top: 60px;
+    left: 50px;
+    transform: rotate(45deg);
+}
+
+@keyframes growLeaves {
+    to {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
 }
